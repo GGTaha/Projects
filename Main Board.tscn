@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/BoardDefault.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Big Board.png" type="Texture" id=2]
+[ext_resource path="res://Assets/BoardHigh.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Next",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="MainBoard" type="Sprite"]
+position = Vector2( 450, 550 )
+texture = ExtResource( 2 )
+
+[node name="Board0" type="AnimatedSprite" parent="."]
+position = Vector2( -300, -300 )
+frames = SubResource( 1 )
+animation = "Next"
+
+[node name="Board1" type="AnimatedSprite" parent="."]
+position = Vector2( 2.5, -300 )
+frames = SubResource( 1 )
+
+[node name="Board2" type="AnimatedSprite" parent="."]
+position = Vector2( 305, -300 )
+frames = SubResource( 1 )
+
+[node name="Board3" type="AnimatedSprite" parent="."]
+position = Vector2( -300, -2.5 )
+frames = SubResource( 1 )
+
+[node name="Board4" type="AnimatedSprite" parent="."]
+position = Vector2( 2.5, -2.5 )
+frames = SubResource( 1 )
+
+[node name="Board5" type="AnimatedSprite" parent="."]
+position = Vector2( 305, -2.5 )
+frames = SubResource( 1 )
+
+[node name="Board6" type="AnimatedSprite" parent="."]
+position = Vector2( -300, 295 )
+frames = SubResource( 1 )
+
+[node name="Board7" type="AnimatedSprite" parent="."]
+position = Vector2( 2.5, 295 )
+frames = SubResource( 1 )
+
+[node name="Board8" type="AnimatedSprite" parent="."]
+position = Vector2( 305, 295 )
+frames = SubResource( 1 )
+
+[node name="Board9" type="AnimatedSprite" parent="."]
+position = Vector2( 761, 288 )
+frames = SubResource( 1 )

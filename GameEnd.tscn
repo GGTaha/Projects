@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/CROSSWIN.png" type="Texture" id=1]
+[ext_resource path="res://Assets/GameOver.png" type="Texture" id=2]
+[ext_resource path="res://Assets/CIRCLEWIN.png" type="Texture" id=3]
+[ext_resource path="res://GameEnd.gd" type="Script" id=4]
+[ext_resource path="res://Assets/RematchHover.png" type="Texture" id=5]
+[ext_resource path="res://Assets/RematchNorm.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Close.png" type="Texture" id=7]
+[ext_resource path="res://Assets/MainMenuHover.png" type="Texture" id=8]
+[ext_resource path="res://Assets/MainMenuNorm.png" type="Texture" id=9]
+[ext_resource path="res://Assets/CloseHover.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Circle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Cross",
+"speed": 5.0
+} ]
+
+[node name="GameEnd" type="CanvasLayer"]
+offset = Vector2( 0, -100 )
+transform = Transform2D( 1, 0, 0, 1, 0, -100 )
+script = ExtResource( 4 )
+
+[node name="GameOver" type="Sprite" parent="."]
+position = Vector2( 450, 650 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 450, 490 )
+scale = Vector2( 0.922347, 0.922346 )
+frames = SubResource( 1 )
+animation = "Circle"
+
+[node name="BacktoGame" type="TextureButton" parent="."]
+margin_left = 740.0
+margin_top = 280.0
+margin_right = 776.0
+margin_bottom = 316.0
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 10 )
+
+[node name="NewGame" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -209.0
+margin_right = 100.0
+margin_bottom = -149.0
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 5 )
+
+[node name="MainMenu" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -138.0
+margin_top = -125.0
+margin_right = 138.0
+margin_bottom = -65.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
+
+[connection signal="pressed" from="BacktoGame" to="." method="_on_BacktoGame_pressed"]
+[connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_MainMenu_pressed"]
